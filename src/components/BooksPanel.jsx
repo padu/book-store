@@ -25,9 +25,6 @@ class BooksPanel extends React.Component {
                 },
                 'dsc': {
                     label: 'Price: High to Low'
-                },
-                'new-arrival': {
-                    label: 'Newest Arrivals'
                 }
             }
         };
@@ -35,6 +32,13 @@ class BooksPanel extends React.Component {
 
     componentDidMount() {
         this.getBookList();
+    }
+
+    componentWillReceiveProps(nextProp) {
+        this.setState({
+            search: nextProp.searchChar,
+            filteredBooks: this.getFilteredBooks(nextProp.searchChar)
+        });
     }
 
     getAllBooks() {
@@ -109,18 +113,10 @@ class BooksPanel extends React.Component {
             <div className="books-wrapper">
                 <div className="books-panel-header">
                     <span className="books-panel-header-text">Books <span className="books-count">({this.state.bookList.length} items)</span> </span>
-                    <FormControl
-                        type="text"
-                        placeholder="Search by author name or book name here"
-                        className="col-lg-7 col-sm-3 col-xm-2 search-books"
-                        value={this.state.search}
-                        onChange={(event)=>this.updateSearch(event)}
-                        />
                     <DropdownButton variant="danger" title={this.getSortButtonTitle()} className="ml-auto">
                         <Dropdown onSelect={(eventKey) => this.updateSort(eventKey)}>
                             <Dropdown.Item eventKey="asc" >{this.state.dropdownItems['asc'].label}</Dropdown.Item>
                             <Dropdown.Item eventKey="dsc">{this.state.dropdownItems['dsc'].label}</Dropdown.Item>
-                            <Dropdown.Item eventKey="new-arrival">{this.state.dropdownItems['new-arrival'].label}</Dropdown.Item>
                         </Dropdown>
                     </DropdownButton>
                 </div>
