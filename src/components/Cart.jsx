@@ -43,6 +43,7 @@ class Cart extends React.Component {
                     </div>
                     <div className="cart-collapsible">
                         <h5>Customer Details</h5>
+                        
                     </div>
                     <div className="cart-collapsible">
                         <h5>Order Summery</h5>
