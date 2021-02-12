@@ -2,13 +2,10 @@ import React from 'react';
 import CardDeck from 'react-bootstrap/CardDeck';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
-import FormControl from 'react-bootstrap/FormControl';
-
 // import Pagination from './Pagination';
 import Book from './Book';
 
 class BooksPanel extends React.Component {
-    
     constructor(props) {
         super(props);
         this.state = {
@@ -121,7 +118,7 @@ class BooksPanel extends React.Component {
                     </DropdownButton>
                 </div>
                 <CardDeck style={{display: 'flex', flexDirection: 'row'}} >
-                    {this.state.filteredBooks.map((bookItem)=>{return <Book key={bookItem.id} item={bookItem}/>})}
+                    {this.state.filteredBooks.map(bookItem => <Book key={bookItem.id} item={bookItem}/>)}
                 </CardDeck>
                 {/* <div className="pagination-wrapper">
                     <Pagination/>

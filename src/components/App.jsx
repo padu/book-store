@@ -1,32 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import Header from "./Header";
-import BooksPanel from "./BooksPanel";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import Cart from './Cart';
 import Footer from "./Footer";
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            filteredChar: ''
-        };
-    }
-
-    setSearch = (event) => {
-        this.setState({
-            filteredChar: event.target.value.substr(0, 20)
-        });
-    }
-
-    render() {
-        return(
-            <>
-                <Header setSearch={this.setSearch}/>
-                <BooksPanel searchChar={this.state.filteredChar}/>
-                <Footer/>
-            </>
-        );
-    } 
+function App() {
+    return (
+        <>
+            <BrowserRouter>
+                <Switch>
+                    <Route path={"/"} exact component={Dashboard} />
+                    <Route path={"/cart"} exact component={Cart} />
+                </Switch>
+            </BrowserRouter>
+            <Footer/>
+        </>
+    );
 }
-
+    
 export default App;
