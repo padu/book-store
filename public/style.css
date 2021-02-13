@@ -172,6 +172,7 @@ header div.header_title {
     width: 100%;
     height: auto;
     margin-bottom: 50px;
+    min-height: 100%;
 }
 
 .book-image-wrapper {
