@@ -9,7 +9,7 @@ import { fetchBookList, sortBookList } from '../redux'
 function BooksPanel({filteredBooks, noOfBooks, getAllBooks, sort, sortBookList}) {
     const dropdownItems = {
         'none': {
-            label: 'Sort by relevence'
+            label: 'Sort by'
         },
         'asc': {
             label: 'Price: Low to High',

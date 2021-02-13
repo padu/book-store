@@ -66,8 +66,35 @@ header div.header_title {
     height: 21px;
     background: url(cart-icon.svg) no-repeat;
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 3px;
     background-size: 20px 21px;
+}
+.cart_count {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: white;
+    color: #A03037;
+    border-radius: 14px;
+    display: inline-block;
+    top: -4px;
+    right: -6px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    font-weight: 600;
+    opacity: 1 !important;
+}
+.cart-button {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    margin: 0px 10px;
+}
+
+.cart-button:hover {
+    opacity: 1;
 }
 
 /** Book Card **/
@@ -112,6 +139,10 @@ header div.header_title {
 .book-price-text {
     font-size: 12px;
     font-weight: bold;
+}
+
+.card-deck {
+    justify-content: center;
 }
 
 .card-footer {

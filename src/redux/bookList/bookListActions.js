@@ -4,15 +4,16 @@ import {
   FETCH_BOOKLIST_SUCCESS,
   FETCH_BOOKLIST_FAILURE,
   SEARCH_BOOKLIST,
-  SORT_BOOKLIST
+  SORT_BOOKLIST,
+  ADD_BOOK_TO_CART
 } from './bookListTypes'
 
 export const fetchBookList = () => {
   return (dispatch) => {
     dispatch(fetchBookListRequest())
-    axios
-      .get('books.json')
-      .then(response => {
+    const promise = axios.get('books.json');
+    console.log(promise);
+    promise.then(response => {
         // response.data is the booklist
         const bookList = response.data.results;
         dispatch(fetchBookListSuccess(bookList))
@@ -55,5 +56,12 @@ export const sortBookList = sortType => {
   return {
     type: SORT_BOOKLIST,
     payload: sortType
+  }
+}
+
+export const addBookToCart = book => {
+  return {
+    type: ADD_BOOK_TO_CART,
+    payload: book
   }
 }
