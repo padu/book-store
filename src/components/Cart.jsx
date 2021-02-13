@@ -38,7 +38,7 @@ class Cart extends React.Component {
                             </div>
                         </div>
                         <div className="cart-collapsible-footer">
-                            <Button className="place-order-button"> PLACE ORDER </Button>
+                            <Button className="basic-button place-order-button"> PLACE ORDER </Button>
                         </div>
                     </div>
                     <div className="cart-collapsible">

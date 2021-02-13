@@ -223,7 +223,8 @@ header div.header_title {
     display: flex;
     justify-content: flex-end;
 }
-.place-order-button {
+
+.basic-button, .place-order-button {
     border-radius: 0px;
     padding: 5px 20px;
     background-color: #3371B5;
@@ -234,6 +235,7 @@ header div.header_title {
     width: 102px !important;
     margin-top: 30px;
 }
+
 .react-numeric-input input {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -247,6 +249,52 @@ header div.header_title {
     border-radius: 12px !important;
 }
 
+/*Success*/
+.success-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.success-decoration {
+    background-image: url(./success-decoration.svg);
+    width: 290px;
+    height: 224px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 50px;
+}
+
+.success-decoration h4 {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.greet-text {
+    width: 290px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-table-wrapper {
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+/** contact table **/
+.contact-table th {
+    text-align: center;
+    font-weight: 400;
+}
+.contact-table td {
+    width: 180px;
+    text-align: center;
+}
+
+.contact-table td.address-data {
+    width: 380px;
+    text-align: left;
+}
 
 /** Footer **/
 footer {
