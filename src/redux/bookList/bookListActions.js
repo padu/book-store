@@ -12,7 +12,6 @@ export const fetchBookList = () => {
   return (dispatch) => {
     dispatch(fetchBookListRequest())
     const promise = axios.get('books.json');
-    console.log(promise);
     promise.then(response => {
         // response.data is the booklist
         const bookList = response.data.results;
